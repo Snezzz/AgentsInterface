@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainPage">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="-5" y="-6" width="200" height="200"/>
+    </constraints>
+    <properties>
+      <autoscrolls value="true"/>
+      <background color="-1379073"/>
+      <maximumSize width="200" height="200"/>
+      <minimumSize width="200" height="200"/>
+      <opaque value="true"/>
+      <preferredSize width="200" height="200"/>
+    </properties>
+    <clientProperties>
+      <html.disable class="java.lang.Boolean" value="false"/>
+    </clientProperties>
+    <border type="none"/>
+    <children>
+      <grid id="2910" binding="panel1" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties>
+          <background color="-526345"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="a305f" class="javax.swing.JLabel" binding="helloLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="392" height="54"/>
+              </grid>
+              <gridbag weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-9702686"/>
+              <enabled value="true"/>
+              <text value="Hello"/>
+            </properties>
+          </component>
+          <component id="54a1c" class="javax.swing.JLabel" binding="infoLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b126" binding="menuPanel" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties>
+          <background color="-393250"/>
+          <doubleBuffered value="false"/>
+          <minimumSize width="500" height="221"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="d120e" binding="ratingPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="true" same-size-vertically="true" hgap="30" vgap="2">
+            <margin top="10" left="0" bottom="10" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="192" height="28"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-789014"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="bebe7" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="3" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-889725"/>
+                  <font name="Fira Code" style="1"/>
+                  <text value="Your rating:"/>
+                </properties>
+              </component>
+              <component id="9687b" class="javax.swing.JComboBox" binding="ratingBox">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                    <item value="4"/>
+                    <item value="5"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="161b1" class="javax.swing.JButton" binding="getSolutionButton">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="2" indent="1" use-parent-layout="false"/>
+              <gridbag top="5" left="0" bottom="5" right="0" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-1877402"/>
+              <font name="Fira Code" style="1"/>
+              <text value="Get optimal solution"/>
+            </properties>
+          </component>
+          <component id="b25d4" class="javax.swing.JButton" binding="saveDataButton">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="2" use-parent-layout="false">
+                <preferred-size width="192" height="24"/>
+              </grid>
+              <gridbag top="5" left="0" bottom="5" right="0" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-9702686"/>
+              <font name="Fira Code" style="1"/>
+              <text value="Save ratings"/>
+            </properties>
+          </component>
+          <component id="acda1" class="javax.swing.JLabel" binding="helpLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="10" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Label"/>
+            </properties>
+          </component>
+          <scrollpane id="47e2a" binding="scrollPane">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <horizontalScrollBarPolicy value="31"/>
+              <maximumSize width="20" height="20"/>
+              <preferredSize width="500" height="250"/>
+              <verticalScrollBarPolicy value="20"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="1dffb" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints/>
+                <properties>
+                  <background color="-393250"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="e1db9" binding="coresPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="3">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-393250"/>
+                    </properties>
+                    <border type="none">
+                      <title-color color="-16777216"/>
+                      <color color="-16777216"/>
+                    </border>
+                    <children>
+                      <grid id="d554c" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="38246" class="javax.swing.JRadioButton" binding="coresRadioButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                                <preferred-size width="122" height="22"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <background color="-393250"/>
+                              <font name="Fira Code" style="1"/>
+                              <text value="Cores of graph:"/>
+                              <verticalAlignment value="1"/>
+                            </properties>
+                          </component>
+                          <grid id="80444" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-393250"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="ea256" class="javax.swing.JLabel">
+                                <constraints/>
+                                <properties>
+                                  <text value="k:"/>
+                                </properties>
+                              </component>
+                              <component id="38789" class="javax.swing.JTextField" binding="coresTextField">
+                                <constraints/>
+                                <properties>
+                                  <margin top="5" left="5" bottom="5" right="5"/>
+                                  <text value="100"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="4654b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="3bd19" class="javax.swing.JTextPane" binding="coresPane">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="1" use-parent-layout="false">
+                                <preferred-size width="220" height="100"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <editable value="false"/>
+                              <text value="The intersection of internally stable and externally stable sets of vertices is sought - the kernel of the graph. There may be several or none at all. One node can belong to multiple cores. If cores are detected, a graph is displayed. In case of absence, it is necessary to choose another parameter k. k is the maximum degree of any node in the graph."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="10554" binding="cliquesPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-393250"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="42f08" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="643fe" class="javax.swing.JTextField" binding="cliqueTextField">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <margin top="5" left="5" bottom="5" right="5"/>
+                              <text value="20"/>
+                            </properties>
+                          </component>
+                          <component id="d202f" class="javax.swing.JRadioButton" binding="cliquesRadioButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="2" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-393250"/>
+                              <enabled value="true"/>
+                              <font name="Fira Code" style="1"/>
+                              <selected value="true"/>
+                              <text value="Cliques of graph:"/>
+                            </properties>
+                          </component>
+                          <component id="18471" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="k:"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="88a4d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="63148" class="javax.swing.JTextPane" binding="cliquesPane">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                <preferred-size width="220" height="100"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <editable value="false"/>
+                              <text value="A modification of the Bron-Kerbosch algorithm for finding cliques of the graph is used. One node can belong to several communities. k is the minimum degree of any node in the graph."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="deecd" binding="clustersPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-393250"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="86aa8" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="44e0b" class="javax.swing.JTextField" binding="clustersFirstTextField">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <margin top="5" left="5" bottom="5" right="5"/>
+                              <text value="20"/>
+                            </properties>
+                          </component>
+                          <component id="2544a" class="javax.swing.JRadioButton" binding="clustersFirstRadioButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-393250"/>
+                              <font name="Fira Code" style="1"/>
+                              <text value="Clusters of graph (MST):"/>
+                            </properties>
+                          </component>
+                          <component id="ed441" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="k:"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="a3640" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="c5853" class="javax.swing.JTextPane" binding="firstClustersPane">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                <preferred-size width="220" height="100"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <editable value="false"/>
+                              <text value="A modification of the Minimal Spanning Tree search algorithm is used. To form clusters, an edge with a minimum weight is removed. One node belongs to one cluster. k is the minimum degree of any node in the graph"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="77e89" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-393250"/>
+                      <font size="10"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="67bcd" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="f5913" class="javax.swing.JRadioButton" binding="clustersSecondRadioButton">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-393250"/>
+                              <font name="Fira Code" style="1"/>
+                              <text value="Clusters of graph (NAG):"/>
+                            </properties>
+                          </component>
+                          <component id="f0372" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="k:"/>
+                            </properties>
+                          </component>
+                          <component id="798db" class="javax.swing.JTextField" binding="clustersSecondTextField">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <margin top="5" left="5" bottom="5" right="5"/>
+                              <text value="20"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="5c247" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints/>
+                        <properties>
+                          <background color="-393250"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="19ef4" class="javax.swing.JTextPane" binding="secondClustersPane">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="1" use-parent-layout="false">
+                                <preferred-size width="210" height="100"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <editable value="false"/>
+                              <text value="A modification of the Girvan - Newman algorithm is used to find clusters by removing edges with a maximum exponent. One node belongs to one cluster. k is the minimum degree of any node in the graph."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </scrollpane>
+          <component id="fa38" class="javax.swing.JButton" binding="loadDataButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="20" left="0" bottom="20" right="0" weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <background color="-5832854"/>
+              <font name="Fira Code" style="1"/>
+              <horizontalAlignment value="0"/>
+              <label value="Load Graph"/>
+              <text value="Load Graph"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="buttonGroup1">
+      <member id="38246"/>
+      <member id="d202f"/>
+      <member id="2544a"/>
+      <member id="f5913"/>
+    </group>
+  </buttonGroups>
+</form>
