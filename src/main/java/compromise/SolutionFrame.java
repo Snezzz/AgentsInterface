@@ -1,7 +1,13 @@
 package compromise;
 
+import db.DBConnection;
+import sun.management.resources.agent;
+
 import javax.swing.*;
 import java.awt.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Vector;
 
 public class SolutionFrame extends JFrame {
@@ -21,6 +27,7 @@ public class SolutionFrame extends JFrame {
            data[i][1] = agent.getOptimalAlgorithm().getName();
             i++;
        }
+
        JTable table = new JTable(data,headers);
        JScrollPane jscrlp = new JScrollPane(table);
        table.setPreferredScrollableViewportSize(new Dimension(250, 100));
@@ -34,6 +41,27 @@ public class SolutionFrame extends JFrame {
        setSize(200,200);
        setLocation(200,10);
        setVisible(true);
+
+       Object [][] dataToDB = new Object[this.agents.size()][2];
+       i = 0;
+       for (Agent agent: this.agents){
+           dataToDB[i][0] = agent.getId();
+           dataToDB[i][1] = agent.getOptimalAlgorithm().getId();
+           i++;
+       }
+       sendData(dataToDB);
    }
+
+   public void sendData(Object [][] data){
+       DBConnection dbConnection = new DBConnection();
+       try {
+           dbConnection.makeConnection("postgres");
+           dbConnection.clearData();
+           dbConnection.insertOptimalValues(data);
+       } catch (SQLException e1) {
+           e1.printStackTrace();
+       }
+   }
+
 
 }

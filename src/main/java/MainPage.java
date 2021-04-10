@@ -7,8 +7,9 @@ import compromise.Algorithm;
 import compromise.Compromise;
 import compromise.SolutionFrame;
 import core.Cores;
-import database.DBConnection;
+
 import database.DataBaseConnection;
+import db.DBConnection;
 
 
 import javax.swing.*;
@@ -59,7 +60,7 @@ public class MainPage extends JFrame {
 
     private JFrame graphFrame;
     private JFrame infoFrame;
-
+    private JFrame buttonFrame;
 
 
     public MainPage(final Agent agent) {
@@ -119,6 +120,7 @@ public class MainPage extends JFrame {
 
                     graphFrame = clique.graphFrame;
                     infoFrame = clique.infoFrame;
+                    buttonFrame = clique.buttonFrame;
                 }
                 else if(coresRadioButton.isSelected()){
                     getAlgorithmData(1);
@@ -133,6 +135,7 @@ public class MainPage extends JFrame {
 
                     graphFrame = cores.graphFrame;
                     infoFrame = cores.infoFrame;
+                    buttonFrame = cores.buttonFrame;
              }
 
                 else if (clustersFirstRadioButton.isSelected()){
@@ -147,6 +150,7 @@ public class MainPage extends JFrame {
                     }
                     graphFrame = clusters.graphFrame;
                     infoFrame = clusters.infoFrame;
+                    buttonFrame = clusters.buttonFrame;
                 }
                 else if (clustersSecondRadioButton.isSelected()){
                     getAlgorithmData(4);
@@ -160,12 +164,14 @@ public class MainPage extends JFrame {
                     }
                     graphFrame = newmanAndGirvanClusters.graphFrame;
                     infoFrame = newmanAndGirvanClusters.infoFrame;
+                    buttonFrame = newmanAndGirvanClusters.buttonFrame;
 
                 }
                 if (graphFrame != null)
                     graphFrame.setVisible(true);
                 if (infoFrame != null)
                     infoFrame.setVisible(true);
+                buttonFrame.setVisible(true);
                 getContentPane().validate();
                 getContentPane().repaint(2000);
              }
@@ -232,9 +238,11 @@ public class MainPage extends JFrame {
                 int rating = Integer.valueOf((String) ratingBox.getSelectedItem());
                 try {
                     dbConnection.makeConnection("postgres");
+                    dbConnection.clearData();
                     String query = "SELECT algorithm_id, agent_id from rivalry.rating WHERE agent_id = "+ agent.getId()+
                             " and algorithm_id = " + algorithm.getId();
                     ResultSet rs = dbConnection.makeQuery(query);
+
                     if(rs.next()){
                         updateRating(rating);
                     }
