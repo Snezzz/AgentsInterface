@@ -6,7 +6,7 @@ public class Compromise {
     private Map<Integer, Map<Integer, Integer>> H;
     private int n;
     private int m;
-    private List<List<Integer>> X; //список id алгоритма
+    private List<Algorithm> X; //список id алгоритма
     private List<Object []>obj;
     private List<List<Integer>> gainMatrix;
     private Map<Integer, Integer> M; //key = agent id, value = max value
@@ -18,7 +18,7 @@ public class Compromise {
         this.n = agentsCount;
         this.m = algorithmsCount;
         this.H = new HashMap<Integer, Map<Integer, Integer>>();
-        this.X = new ArrayList<List<Integer>>();
+        this.X = new ArrayList<Algorithm>();
         this.gainMatrix = new ArrayList<List<Integer>>();
         this.M = new HashMap<Integer, Integer>();
         this.diff = new ArrayList<List<Integer>>();
@@ -58,23 +58,24 @@ public class Compromise {
 
     //
     public void getSolutions(){
-        List<Integer> algorithms = new ArrayList<Integer>();
+        List<Algorithm> algorithms = new ArrayList<Algorithm>();
         for (Algorithm algorithm: this.algorithms){
-            algorithms.add(algorithm.getId());
+            algorithms.add(algorithm);
         }
-        permute(this.algorithms, this.n);
+        this.X = algorithms;
+       // permute(this.algorithms, this.n);
         getSolution();
     }
 
     private void getSolution(){
-        fillGainMatrix(this.X);
+        fillGainMatrix(this.X, this.agents);
         findM(this.gainMatrix);
         getDifference(this.gainMatrix);
         findSolution();
     }
 
 
-    void permute(List<Algorithm> a, int k) {
+  /*  void permute(List<Algorithm> a, int k) {
         int n = a.size();
 
         int[] indexes = new int[k];
@@ -99,12 +100,12 @@ public class Compromise {
             }
         }
     }
+*/
 
-
-    private void permuteIteration(List<Integer> arr, int pos,int maxUsed, int limit) {
+    /*private void permuteIteration(Algorithm algorithm, int pos,int maxUsed, int limit) {
         //последняя итерация
         if (pos == limit) {
-            List<Integer> copy = new ArrayList<Integer>(arr);
+            Algorithm copy = algorithm;
             this.X.add(copy);
             return;
         }
@@ -122,19 +123,19 @@ public class Compromise {
 
         }
     }
-
+*/
     /**
      * Строим матрицу выигрышей
      * @param X - всевозможные комбинации
      */
-    private void fillGainMatrix(List<List<Integer>> X){
+    private void fillGainMatrix(List<Algorithm> X, List<Agent> agents){
         this.gainMatrix = new ArrayList<>();
-        for (List<Integer> x: X){
+        for (Agent agent: agents){
             List<Integer> ranges = new ArrayList<Integer>();
             int i = 0;
-            for (Integer algorithmId: x){
-                Integer agentId = agents.get(i).getId();
-                ranges.add(this.H.get(agentId).get(algorithmId));
+            for (Algorithm algorithm: X){
+                Integer agentId = agent.getId();
+                ranges.add(this.H.get(agentId).get(algorithm.getId()));
                 i++;
             }
             this.gainMatrix.add(ranges);
@@ -146,6 +147,22 @@ public class Compromise {
      * Поиск идеального вектора
      * @param gainMatrix
      */
+    /*
+    private void findM(List<List<Integer>> gainMatrix){
+        this.M = new HashMap<Integer, Integer>();
+        int k = gainMatrix.get(0).size();
+        //Integer [][] matrix = (Integer[][]) gainMatrix.toArray();
+        for(int j = 0; j < gainMatrix.get(0).size(); j++){
+            int maxValue = 0;
+            for (int i = 0; i < gainMatrix.size(); i++){
+                int value = gainMatrix.get(i).get(j);
+                if (value > maxValue)
+                    maxValue = value;
+            }
+            this.M.put(j, maxValue);
+        }
+    }
+*/
     private void findM(List<List<Integer>> gainMatrix){
         this.M = new HashMap<Integer, Integer>();
         int k = gainMatrix.get(0).size();
@@ -176,11 +193,12 @@ public class Compromise {
     private void findSolution(){
         Map<Integer, Integer> map = new HashMap<Integer, Integer>(); //key = номер сочетания, value = макс значение отклонения
         int i = 0;
-        for(List<Integer> x: this.X){
+
+        for(Algorithm x: this.X){
             int max = 0;
 
-            for (List<Integer> values: this.diff){
-                    int diff = values.get(i);
+            for (Integer value: this.diff.get(i)){
+                    int diff = value;
                     if (diff > max) {
                         max = diff;
                     }
@@ -212,17 +230,17 @@ public class Compromise {
         //одно решение или же разности одинаковые
         if ((minValues.size() == 1)||(minValues.size() == map.size())) {
             //ставим каждому агенту в соответствие оптимальное решение
-            List<Integer> optimalVector = this.X.get(minId);
+//            Algorithm optimalAlgorithm = this.X.get(minId);
             i = 0;
-            for (Integer algorithmId : optimalVector) {
-                Algorithm algorithm = findAlgorithmById(algorithmId);
-                this.agents.get(i).setOptimalAlgorithm(algorithm);
+            for (Agent agent : this.agents) {
+                Algorithm algorithm = findAlgorithmById(minId+1);
+                agent.setOptimalAlgorithm(algorithm);
                 i++;
             }
         }
         //несколько решений
         else{
-            List<List<Integer>> newList = new ArrayList<List<Integer>>();
+            List<Algorithm> newList = new ArrayList<Algorithm>();
             for (Integer xId: minValues){
                 newList.add(this.X.get(xId));
             }
